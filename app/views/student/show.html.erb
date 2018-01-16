@@ -1,0 +1,13 @@
+<h2>Hello, <%= @student.title %></h2>
+
+<p>
+	<strong>Email : </strong>
+  <%= @student.mail %>
+</p>
+
+<p>
+	<strong>Mobile : </strong>
+  <%= @student.mobile %>
+</p>
+
+<%= link_to 'Back', student_index_path %>

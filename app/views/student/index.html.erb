@@ -1,0 +1,21 @@
+<table border = 5 >
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+ 
+  <% @student.each do |stu| %>
+    <tr>
+      <td><%= stu.title %></td>
+      <td><%= stu.mail %></td>
+      <td><%= stu.mobile %></td>
+      <td><%= link_to 'Show', student_path(stu) %></td>
+      <td><%= link_to 'Edit', edit_student_path(stu) %></td>
+      <td><%= link_to 'Delete', student_path(stu), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
