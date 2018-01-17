@@ -1,36 +1,41 @@
-<table border = 5>
 <%= form_with scope: :student, url: student_path(@student), method: :patch, local: true do |form| %>
-  <% @student.errors.any? %>
-  <!-- <div id="error_explanation"> -->
-      <h2>
-        <%= pluralize(@student.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @student.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    <!-- </div> -->
-  <tr>
-    <td><%= form.label :title %></td>
-    <td><%= form.text_field :title %></td>
-  </tr>
-  <tr>
-    <td><%= form.label :mail %></td>
-    <td><%= form.text_field :mail %></td>
-  </tr>
-  <tr>
-    <td><%= form.label :mobile %></td>
-    <td><%= form.text_field :mobile %></td>
-  </tr>
-  <tr>
-    <td><%= form.label :password %></td>
-    <td><%= form.text_field :password %></td>
-  </tr>
+  <table border = 5>
+    <% @student.errors.any? %>
+    <!-- <div id="error_explanation"> -->
+        <h2>
+          <%= pluralize(@student.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @student.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <!-- </div> -->
+    <tr>
+      <td><%= form.label :title %></td>
+      <td><%= form.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :mail %></td>
+      <td><%= form.text_field :mail %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :mobile %></td>
+      <td><%= form.text_field :mobile %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :password %></td>
+      <td><%= form.text_field :password %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :password_confirmation %></td>
+      <td><%= form.text_field :password_confirmation %></td>
+    </tr>
+   
+      <p>
+        <%= form.submit %>
+      </p>
   </table>
-    <p>
-      <%= form.submit %>
-    </p>
 <% end %>
 <%= link_to 'Back', student_index_path %>
